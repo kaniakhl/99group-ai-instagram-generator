@@ -16,38 +16,41 @@ A lightweight, repeatable AI-based workflow to generate Instagram content for Ge
 
 ## Workflow
 
-1. **Generate property news**  
-   Prompt:  
-   > “Give me 10 recent property news headlines in Indonesia relevant to young buyers.”
+1. **Fetch Latest Property News**  
+   Source: RSS feed (e.g., Kompas Properti, Detik Properti) or web scrape via n8n / Make
+   Optional: Use Google News API
 
-2. **Filter top 5 headlines for Gen-Z/millennials**  
-   Prompt:  
-   > “Pick 5 headlines most interesting to Gen-Z/millennials looking for their first home.”
+2. **Filter Top 5 News for Gen Z/Millennial**
+   Use GPT-4 API or Flowise to filter for news that is:
+      - Easy to relate to (e.g., rent, tiny homes, KPR, green living)
+      - Emotionally engaging (e.g., problems, aspirations, tips)
 
 3. **Generate Instagram caption for each**  
    Prompt:  
-   > “Write an Instagram caption (≤300 characters) with a strong hook, emojis, SEO keywords, and ending with a question.”
+   > “Write a catchy, Gen Z-style Instagram caption with emojis, hook, and hashtags based on this news: [insert news]”
 
-4. **Generate an image with DALL·E**  
+5. **Generate an image with DALL·E**  
    Prompt:  
-   > “Modern small Indonesian house for young civil servants (Aparatur Sipil Negara), bright daylight, tropical setting, Instagram aesthetic, no text.”
+   > “Modern Indonesian house for young and millenial, bright daylight, tropical setting, Instagram aesthetic, no text.”
 
-5. **Compile post**  
-   Optionally layout using Canva, combine caption and image into Instagram-ready format.
+6. **Auto-Schedule Post**  
+   Tools: Buffer, Metricool, Later, or manual upload
+
+7. **Save to Repo or Airtable**
+   Store generated image, caption, and source link for archive or review
 
 ## Sample Output
 - **Caption example**:  
-  > "📈 💬 "Daripada minjam ke rentenir, mending pilih solusi yang aman dan cepat!"
+  > "🏡 “Penasaran kenapa harga rumah hampir stagnan, tapi tetap jadi peluang emas?”
 
-Menteri PKP bareng Gubernur Jabar Kang Dedi resmi luncurkan Pembiayaan HOME, program pembiayaan mikro perumahan buat masyarakat yang butuh renovasi rumah atau modal usaha 💪
+Di Q1 2025, indeks harga properti residensial nasional naik hanya 1,1% YoY — inflasi disesuaikan, naik 0,5% saja 
+globalpropertyguide.com
+.
+Tapi justru ini jadi momen bagus buat beli rumah: harga belum melonjak, KPR mulai normal, dan permintaan properti kompak meningkat 0,7% YoY!
 
-✔️ Proses cepat (cuma 3 hari)
-✔️ Bunga ringan
-✔️ Cocok buat ibu-ibu pelaku usaha mikro
+✍️ Saatnya jadi pemilik properti muda tanpa bikin kantong bolong, apalagi kalau kamu pertama kali beli rumah.
 
-Bukan sekadar pinjaman, tapi juga ada pendampingan dan pelatihan dari PNM! ✨
-
-#BebasDariRentenir #PembiayaanHome #PNMMekaar #JabarJuara"
+#GenZMelekProperti #InvestasiMuda #RenovasiCerdas #Properti2025"
 
 - **Image example**: *(https://drive.google.com/file/d/1_4Yx3cTPTx6WXqbK6PM7pGCRoMgDLKkY/view?usp=sharing)*
 
